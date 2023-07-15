@@ -50,7 +50,6 @@ if __name__ == "__main__":
     n_authors = len(authors)
     G = nx.Graph()
 
-
     def neighbors(i):
         author = authors[i]
         m1 = followers[author]
@@ -64,7 +63,6 @@ if __name__ == "__main__":
         if i % 10 == 0:
             print(i+1, "/", n_authors)
         return neighbors
-
 
     with Pool(n_pools) as p:
         edges = p.map(neighbors, range(n_authors))
@@ -114,7 +112,6 @@ if __name__ == "__main__":
     RNG = rng(G,
               distances=distances)
     nx.write_gpickle(RNG, "data/Twitter100/rng.pickle")
-
 
     print("Make Mountainworld.")
     heights = {node: G.nodes[node]["height"] for node in G.nodes}

@@ -1,7 +1,7 @@
 import networkx as nx
 import pandas as pd
 
-venues = ["WWW", "WSDM", "SEMWEB"]
+venues = ["ECML", "KDD", "PAKDD"]
 
 results = pd.DataFrame()
 for venue in venues:

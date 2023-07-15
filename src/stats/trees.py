@@ -3,6 +3,7 @@ from collections import Counter
 import networkx as nx
 import pandas as pd
 
+
 def stats(T, name=None):
     T = T.reverse()
     # First get root
@@ -23,18 +24,18 @@ def stats(T, name=None):
 
 
 def main():
-    venues = ["WWW", "WSDM", "SEMWEB"]
+    venues = ["ECML", "KDD", "PAKDD"]
     venue_trees = [nx.read_gpickle("data/" + venue + "/line_parent_tree.pickle")
                    for venue in venues]
     twitter_trees = [nx.read_gpickle("data/Twitter" + str(i) + "/LP.pickle")
                      for i in [10, 100]]
-    ogbn_tree = [nx.read_gpickle("data/ogbn-products/tree.pickle")]
-    trees = venue_trees + twitter_trees + ogbn_tree
-    names = ["WebConf", "WSDM", "ISWC", "Twitter>10k", "Twitter>100k", "OGBN-Products"]
+    trees = venue_trees + twitter_trees
+    names = ["ECML", "KDD", "PAKDD", "Twitter>10k", "Twitter>100k"]
     tree_stats = [stats(T, name) for T, name
                   in zip(trees, names)]
     d = pd.DataFrame(tree_stats)
     print(d)
     d.to_csv("data/tree_stats.csv", index=False)
+
 
 main()

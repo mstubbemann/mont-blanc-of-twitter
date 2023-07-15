@@ -24,7 +24,7 @@ def main(folder="data/WWW/",
                 destination=folder)
         print("Create co-author Graph-")
         G = graph(source=folder)
-    
+
     print("Start computation of distances.")
     distances = dict(nx.algorithms.all_pairs_dijkstra_path_length(G))
 
@@ -43,11 +43,14 @@ def main(folder="data/WWW/",
 
 
 if __name__ == "__main__":
-    venues = ["WWW", "WSDM", "SEMWEB"]
+    venues = ["ECML/PKDD", "PAKDD", "KDD"]
     for venue in venues:
         print("-----------")
         print("Start with venue: ", venue)
-        folder = "data/" + venue + "/"
-        main(folder=folder,
-             venue=venue)
+        if venue != "ECML/PKDD":
+            folder = "data/" + venue + "/"
+        else:
+            folder = "data/ECML/"
+        main(venue=venue,
+             folder=folder)
         print("-------------")

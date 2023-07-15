@@ -163,7 +163,7 @@ def create_graph(source="data/WWW/"):
                       for [author, pub] in pairs])
 
     # Make weighted-coauthor graph, just greatest connected component
-    G = nx.algorithms.bipartite.overlap_weighted_projected_graph(B, authorlist)    
+    G = nx.algorithms.bipartite.overlap_weighted_projected_graph(B, authorlist)
     gcc = max(nx.connected_components(G), key=len)
     G = G.subgraph(gcc).copy()
     for e in G.edges:

@@ -1,9 +1,9 @@
 # The Mont Blanc of Twitter: Identifying Hierarchies of Outstanding Peaks in Social Networks
 
-This repository contains code for the paper [The Mont Blanc of Twitter: Identifying Hierarchies of Outstanding Peaks in Social Networks](https://arxiv.org/abs/2110.13774).
+This repository contains code for the paper [The Mont Blanc of Twitter: Identifying Hierarchies of Outstanding Peaks in Social Networks](https://arxiv.org/abs/2110.13774). Furthermore, it contains the supplementary material of the version accepted to ECML/PKDD.
 
 If you use this repo/paper for your research, please [cite us](https://dblp.org/rec/journals/corr/abs-2110-13774.html?view=bibtex).
-The work on this repo may progress and surpass the content which is reported in the paper. However, for the sake of reproducibility, the branch **arxiv-v2*** will always be freezed to the code used for the experiments in the paper.
+The work on this repo may progress and surpass the content which is reported in the paper. However, for the sake of reproducibility, the branch **arxiv-v2*** will always be freezed to the code used for the experiments in the arxiv-version and the branch **ECML** will be freezed to the version accepted to the ECML/PKDD 2023.
 
 ## Setup
 Python3.7 is needed to run the scripts in this folder. The needed packages can be installed via:
@@ -27,10 +27,10 @@ WARNING: Semantic Scholar will require over 115 Gigabyte disk space.
 ### Twitter Networks
 
 The Twitter graphs will be cerated as part of the Twitter main functions below.  To run the Twitter main scripts, you need to place and unpack
-`twitter-2010-id.csv` and `twitter-2010-id.csv` from [here](https://snap.stanford.edu/data/twitter-2010.html) into `data/`.
+`twitter-2010-id.csv` and `twitter-2010.txt` from [here](https://snap.stanford.edu/data/twitter-2010.html) into `data/`.
 
 NOTE: The Twitter graphs are processed using Python multiprocessing with 14 parallel cores. If you have a lower amount available on your machine,
-change the `n_pools` variable at the top of `src/twitter10_main` and/or `src/twitter100main`.
+change the `n_pools` variable at the top of `src/twitter10_main` and/or `src/twitter100_main`.
 
 ## Main scripts
 
@@ -55,11 +55,12 @@ PYTHONHASHSEED=42 python -m src.twitter10_main
 PYTHONHASHSEED=42 python -m src.twitter100_main
 ```
 
-### OGBN Prodcuts
+### Distance from Peaks to Rest
 
 ```
-PYTHONHASHSEED=42 python src/big.py
+PYTHONHASHSEED=42 python src/distance_to_peaks.py
 ```
+
 ## Random Experiments
 
 ```
@@ -96,7 +97,7 @@ The code in this repository is published under the following MIT License:
 
 ###################
 
-Copyright 2022 Maximilian Stubbemann <stubbemann@cs.uni-kassel.de>
+Copyright 2023 Maximilian Stubbemann <stubbemann@cs.uni-kassel.de>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
