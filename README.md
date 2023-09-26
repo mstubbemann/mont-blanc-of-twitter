@@ -2,8 +2,8 @@
 
 This repository contains code for the paper [The Mont Blanc of Twitter: Identifying Hierarchies of Outstanding Peaks in Social Networks](https://arxiv.org/abs/2110.13774). Furthermore, it contains the supplementary material of the version accepted to ECML/PKDD.
 
-If you use this repo/paper for your research, please [cite us](https://dblp.org/rec/journals/corr/abs-2110-13774.html?view=bibtex).
-The work on this repo may progress and surpass the content which is reported in the paper. However, for the sake of reproducibility, the branch **arxiv-v2*** will always be freezed to the code used for the experiments in the arxiv-version and the branch **ECML** will be freezed to the version accepted to the ECML/PKDD 2023.
+If you use this repo/paper for your research, please [cite us](https://dblp.org/rec/conf/pkdd/StubbemannS23.html?view=bibtex).
+The work on this repo may progress and surpass the content which is reported in the paper. However, for the sake of reproducibility, the branch **arxiv-v2*** will always be freezed to the code used for the experiments in the arxiv-version 2 and the branch **ECML** will be freezed to the version accepted to the ECML/PKDD 2023.
 
 ## Setup
 Python3.7 is needed to run the scripts in this folder. The needed packages can be installed via:
